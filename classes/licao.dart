@@ -18,7 +18,7 @@ void main() {
   print('Meu animal de Estimação se chama ' +
       pessoa.meuAnimalDeEstimacao.nome +
       " se apresenta ai meu filho");
-      pessoa.meuAnimalDeEstimacao.Latir();
+  pessoa.meuAnimalDeEstimacao.Latir();
 }
 
 class Pessoa {
