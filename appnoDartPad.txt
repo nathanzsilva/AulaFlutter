@@ -1,0 +1,54 @@
+//biblioteca que fornece widgets para construir interfaces
+import 'package:flutter/material.dart';
+
+//MAIN() função principal, a partir dele é que se inicia o app
+void main() {
+  runApp(const MaterialApp(
+    //definir qual será a tela inicial do aplicativo
+    home: Home(),
+    debugShowCheckedModeBanner:
+        false, //define se o banner de depuração será exibido
+  ));
+}
+
+//cria a classe que será iniciada com o app, nesse caso se chama "Home".
+//extends (herda) todos os métodos e propriedades da classe "StatefulWidget"
+//https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html
+class Home extends StatefulWidget {
+  //método construtor da classe com um parâmetro não obrigatório, por isso uso das {}
+  const Home({super.key});
+
+  //sobrescrita do método "createState()"
+  //cria o estado da classe Home
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+//cria a classe _HomeState que herda de "State"
+//gerencia o estado da classe Home
+class _HomeState extends State<Home> {
+  //sobrescreve o método build() que retorna um Widget
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Titulo do App"),
+        backgroundColor: Colors.amber,
+      ),
+      body: Column(children: [
+        Padding(padding: EdgeInsets.all(30), child: Text("Criança")),
+        Padding(
+            padding: EdgeInsets.all(25),
+            child: TextField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(labelText: "Digite um texto"))),
+        Image.network(
+          'https://static.wikia.nocookie.net/super-sonico/images/3/39/Photo_%283%29.jpg/revision/latest?cb=20180218020508&path-prefix=pt-br',
+          width: 100,
+        )
+      ]),
+      //const Center(child: Text("Texto Centralizado"),
+      //Cotainer(child: const Text("Texto dentro de um Container"))),
+    ); //estrutura básica para construção de interfaces
+  }
+}
