@@ -3,9 +3,6 @@ import 'package:soma/somar.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-        home: Somar()
-    ),
-
+    MaterialApp(home: Somar()),
   );
 }
